@@ -58,6 +58,7 @@ const logIn = asyncHandler(async (req, res) => {
   }
 });
 
+// User get into profile
 const getProfile = asyncHandler(async (req, res) => {
   const { token } = req.cookies;
   if (token) {
@@ -71,8 +72,14 @@ const getProfile = asyncHandler(async (req, res) => {
   }
 });
 
+// User Logout
+const logOut = asyncHandler(async (req, res) => {
+  res.cookie("token", "").json(true);
+});
+
 module.exports = {
   register,
   logIn,
   getProfile,
+  logOut,
 };
