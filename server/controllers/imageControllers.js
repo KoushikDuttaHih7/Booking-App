@@ -3,8 +3,6 @@ const imageDownloader = require("image-downloader");
 const express = require("express");
 
 // console.log(__dirname);
-const app = express();
-app.use("/uploads", express.static(__dirname + "/uploads"));
 
 const imageUpload = asyncHandler(async (req, res) => {
   const { link } = req.body;

@@ -29,6 +29,7 @@ const PORT = process.env.PORT || 5001;
 app.use("/api/user", userRoutes);
 app.use("/api/image", imageRoutes);
 
+app.use("/api/image/uploads", express.static(__dirname + "/uploads"));
 app.use(errorHandler);
 
 app.listen(PORT, () => {
