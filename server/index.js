@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config();
 const cors = require("cors");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
+const imageRoutes = require("./routes/imageRoutes");
 const errorHandler = require("./middleware/errorMiddleware");
 const cookieParser = require("cookie-parser");
 
@@ -26,6 +27,7 @@ const PORT = process.env.PORT || 5001;
 // });
 
 app.use("/api/user", userRoutes);
+app.use("/api/image", imageRoutes);
 
 app.use(errorHandler);
 
